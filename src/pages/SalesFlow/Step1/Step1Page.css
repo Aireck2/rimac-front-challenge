@@ -1,0 +1,26 @@
+.grid-container {
+  margin: 1rem 1.5rem 6rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: var(--grid-columns);
+}
+
+.hero-image-container {
+  display: var(--hero-display);
+}
+
+.hero-image-mobile {
+  display: var(--hero-display-mobile);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.step1-divider {
+  display: var(--hero-display-mobile);
+  border-color: #ccd1ee;
+}
