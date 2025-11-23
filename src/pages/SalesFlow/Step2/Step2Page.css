@@ -1,0 +1,32 @@
+.step2-container {
+  max-width: 928px;
+  padding: 2rem 1.5rem;
+  margin: 0 auto;
+}
+.card-hover:hover {
+  cursor: pointer;
+  border: var(--card-border-hover);
+}
+.relative {
+  position: relative;
+}
+.card-check {
+  position: absolute;
+  font-size: 1.5rem;
+  color: var(--success-color);
+  top: 1rem;
+  right: 1rem;
+}
+
+.choose-who-container {
+  margin: 2rem 0;
+  flex-direction: var(--footer-flex-direction);
+}
+.choose-plan-container-overflow {
+  overflow: scroll;
+}
+.choose-plan-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
