@@ -43,7 +43,7 @@ export const Step1Form = () => {
         layout="vertical"
         name="step1"
         initialValues={{
-          documentType: documentType ?? 'DNI',
+          documentType: documentType || 'DNI',
           documentNumber: documentNumber,
           phoneNumber: phoneNumber,
           isTerms: isTerms,
