@@ -2,9 +2,9 @@
 
 This is a web application that simulates the process of getting a quote for your Rimac insurance. It allows you to register, view plans, and resume.
 
-<!-- <div style="text-align: center"> -->
-<!-- <img src="./assets/demo.gif" alt="Demo" width="600" style="margin-bottom: 20px;">
-</div> -->
+ <div style="text-align: center"> 
+<img src="./public/demo.png" alt="Demo" width="600" style="margin-bottom: 20px;">
+</div>
 
 ## 🚀 How to Run the Project
 
