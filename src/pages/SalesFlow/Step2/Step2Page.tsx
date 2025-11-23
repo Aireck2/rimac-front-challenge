@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { LeftCircleOutlined } from '@ant-design/icons';
 import { Button, Flex, Steps } from 'antd';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'wouter';
 
 import House from '@/assets/Step2/house.svg?react';
@@ -8,11 +9,12 @@ import Other from '@/assets/Step2/other.svg?react';
 import Plan from '@/assets/Step2/plan.svg?react';
 import { getPlans } from '@/services/plans';
 import { useUserStore } from '@/store';
-import { useEffect, useState } from 'react';
+
 import { PlanCard } from './PlanCard';
-import './Step2Page.css';
 import { WhoCard } from './WhoCard';
 
+import '../variables.css';
+import './Step2Page.css';
 interface Plan {
   name: string;
   price: number;

@@ -6,6 +6,8 @@ import HeroImage from '@/assets/Step1/hero.png';
 import { Footer } from '@/common/components';
 
 import { Step1Form } from './components/Step1Form';
+
+import '../variables.css';
 import './Step1Page.css';
 
 const Step1Page = () => {

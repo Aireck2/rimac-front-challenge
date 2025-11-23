@@ -7,6 +7,7 @@ import { useLocation } from 'wouter';
 import { Card } from '@/common/components';
 import { useUserStore } from '@/store';
 
+import '../variables.css';
 import './ResumePage.css';
 
 const ResumePage = () => {
