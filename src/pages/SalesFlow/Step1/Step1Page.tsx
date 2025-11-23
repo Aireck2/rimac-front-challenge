@@ -8,7 +8,7 @@ import { Footer } from '@/common/components';
 import { Step1Form } from './components/Step1Form';
 import './Step1Page.css';
 
-export const Step1Page = () => {
+const Step1Page = () => {
   return (
     <div style={{ position: 'relative' }}>
       <Blur1
@@ -80,3 +80,5 @@ export const Step1Page = () => {
     </div>
   );
 };
+
+export default Step1Page;

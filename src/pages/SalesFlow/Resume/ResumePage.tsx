@@ -9,7 +9,7 @@ import { useUserStore } from '@/store';
 
 import './ResumePage.css';
 
-export const ResumePage = () => {
+const ResumePage = () => {
   const [_location, navigate] = useLocation();
   const { documentType, documentNumber, phoneNumber, plan, planPrice, forWho } =
     useUserStore();
@@ -83,3 +83,4 @@ export const ResumePage = () => {
     </>
   );
 };
+export default ResumePage;

@@ -1,6 +1,21 @@
+import { lazy, Suspense } from 'react';
 import { Redirect, Route, Router, Switch } from 'wouter';
 import { Header } from './common/components';
-import { ResumePage, Step1Page, Step2Page } from './pages/SalesFlow';
+
+const routes = [
+  {
+    path: '/cotiza-tu-seguro-rimac',
+    component: lazy(() => import('./pages/SalesFlow/Step1/Step1Page')),
+  },
+  {
+    path: '/cotiza-tu-seguro-rimac/1',
+    component: lazy(() => import('./pages/SalesFlow/Step2/Step2Page')),
+  },
+  {
+    path: '/cotiza-tu-seguro-rimac/2',
+    component: lazy(() => import('./pages/SalesFlow/Resume/ResumePage')),
+  },
+];
 
 export const Routes = () => (
   <>
@@ -9,14 +24,16 @@ export const Routes = () => (
         <Redirect to="/cotiza-tu-seguro-rimac" />
       </Route>
       <Header />
-      <Switch>
-        <Route path="/cotiza-tu-seguro-rimac" component={Step1Page} />
-        <Route path="/cotiza-tu-seguro-rimac/1" component={Step2Page} />
-        <Route path="/cotiza-tu-seguro-rimac/2" component={ResumePage} />
-        <Route path="/*">
-          <Redirect to="/cotiza-tu-seguro-rimac" />
-        </Route>
-      </Switch>
+      <Suspense fallback={<div>Cargando…</div>}>
+        <Switch>
+          {routes.map(({ path, component: Component }) => (
+            <Route key={path} path={path} component={Component} />
+          ))}
+          <Route path="/*">
+            <Redirect to="/cotiza-tu-seguro-rimac" />
+          </Route>
+        </Switch>
+      </Suspense>
     </Router>
   </>
 );

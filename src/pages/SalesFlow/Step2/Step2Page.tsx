@@ -20,7 +20,7 @@ interface Plan {
   age: number;
 }
 
-export const Step2Page = () => {
+const Step2Page = () => {
   const [plans, setPlans] = useState<Plan[]>([]);
   const [_location, navigate] = useLocation();
   const { age, forWho, setUser } = useUserStore();
@@ -122,3 +122,5 @@ export const Step2Page = () => {
     </div>
   );
 };
+
+export default Step2Page;
