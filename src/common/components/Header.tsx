@@ -1,44 +1,50 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import RimacLogo from '@/assets/rimac-logo.svg?react';
 
 import { PhoneFilled } from '@ant-design/icons';
 import { Flex } from 'antd';
-import { md } from '../constants/breakpoints';
+import { useLocation } from 'wouter';
 
-const styleTxt = `
-  .show-md{
-     display: none;
-  }
-  @media (min-width: ${md}) {
-    .show-md{
-       display: block;
-    }
+const styles = `
+  .text-md{
+     display: var(--hero-display);
   }
 `;
 
 export const Header = () => {
+  const [_location, navigate] = useLocation();
   return (
     <>
-      <style>{styleTxt}</style>
+      <style>{styles}</style>
       <Flex
         align="center"
         justify="space-between"
         style={{ margin: '1rem 1.5rem' }}
       >
-        <div>
-          <RimacLogo height={70} />
+        <div style={{ display: 'flex', cursor: 'pointer' }}>
+          <RimacLogo height={70} onClick={() => navigate('/')} />
+          <h1 style={{ margin: 0, visibility: 'hidden' }}>Rimac</h1>
         </div>
         <Flex align="center" gap={'1rem'}>
           <p
-            className="show-md"
+            className="text-md"
             style={{ fontSize: '0.8rem', margin: 0, fontWeight: 'bold' }}
           >
             ¡Compra por este medio!
           </p>
           <Flex align="center" gap={5}>
             <PhoneFilled style={{ fontSize: '1.1rem' }} />
-            <p style={{ fontSize: '1.1rem', margin: 0, fontWeight: 'bold' }}>
+            <a
+              href="tel:+014116001"
+              style={{
+                fontSize: '1.1rem',
+                margin: 0,
+                fontWeight: 'bold',
+                color: 'black',
+              }}
+            >
               (01) 411 6001
-            </p>
+            </a>
           </Flex>
         </Flex>
       </Flex>

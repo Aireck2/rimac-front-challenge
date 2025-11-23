@@ -1,30 +1,21 @@
 import RimacLogoWhite from '@/assets/rimac-logo-white.svg?react';
 
 import { Divider, Flex } from 'antd';
-import { md } from '../constants/breakpoints';
 
-const styleTxt = `
+const styles = `
   .footer-container {
-    flex-direction: column;
+    flex-direction: var(--footer-flex-direction);
   }
-  .hide-md {
+  .footer-divider {
     border-color: #2B304E;
-    display: block;
-  }
-  @media (min-width: ${md}) {
-    .footer-container {
-      flex-direction: row;
-  }
-  .hide-md {
-     display: none;
-    }
+    display: var(--hero-display-mobile);
   }
 `;
 
 export const Footer = () => {
   return (
     <>
-      <style>{styleTxt}</style>
+      <style>{styles}</style>
       <Flex
         className="footer-container"
         align="center"
@@ -34,7 +25,7 @@ export const Footer = () => {
         <div>
           <RimacLogoWhite width={130} />
         </div>
-        <Divider className="hide-md" />
+        <Divider className="footer-divider" />
         <p
           style={{
             fontSize: '1rem',
