@@ -1,3 +1,3 @@
-export { Resume } from "./Resume/Resume.page";
-export { Step1 } from "./Step1/Step1.page";
-export { Step2 } from "./Step2/Step2.page";
+export { ResumePage } from './Resume/ResumePage';
+export { Step1Page } from './Step1/Step1Page';
+export { Step2Page } from './Step2/Step2Page';

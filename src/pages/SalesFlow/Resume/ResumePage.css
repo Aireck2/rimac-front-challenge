@@ -1,0 +1,23 @@
+.steps-container {
+  display: var(--resume-display);
+}
+
+.resume-container {
+  max-width: 928px;
+  padding: 1rem 1.5rem;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.subtitle--min {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.subtitle {
+  font-size: 1rem;
+  font-weight: bold;
+}
