@@ -7,7 +7,7 @@ import { Footer } from '@/common/components';
 
 import { Step1Form } from './components/Step1Form';
 
-import '../variables.css';
+import '@/variables.css';
 import './Step1Page.css';
 
 const Step1Page = () => {

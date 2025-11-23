@@ -13,7 +13,7 @@ import { useUserStore } from '@/store';
 import { PlanCard } from './PlanCard';
 import { WhoCard } from './WhoCard';
 
-import '../variables.css';
+import '@/variables.css';
 import './Step2Page.css';
 interface Plan {
   name: string;
@@ -44,15 +44,13 @@ const Step2Page = () => {
     <div>
       <Flex
         className="steps-container"
+        vertical={false}
         justify="center"
         align="center"
         style={{ background: '#EDEFFC', height: '56px' }}
       >
         <Steps
           size="small"
-          style={{
-            width: '360px',
-          }}
           current={0}
           items={[
             {
@@ -87,39 +85,43 @@ const Step2Page = () => {
             content="Cotiza tu seguro de salud y agrega familiares si así lo deseas."
             icon={<Plan />}
             checked={forWho === 'SELF'}
-            onClick={() => setUser({ forWho: 'SELF' })}
+            onClick={() => setUser({ forWho: forWho === 'SELF' ? '' : 'SELF' })}
           />
           <WhoCard
             title="Para alguien más"
             content="Realiza una cotización para alguien diferente a ti."
             icon={<Other />}
             checked={forWho === 'OTHER'}
-            onClick={() => setUser({ forWho: 'OTHER' })}
+            onClick={() =>
+              setUser({ forWho: forWho === 'OTHER' ? '' : 'OTHER' })
+            }
           />
         </Flex>
-        <div className="choose-plan-container-overflow">
-          <div className="choose-plan-container">
-            {plans
-              .filter((plan) => plan.age < age)
-              .map((plan, index) => (
-                <PlanCard
-                  key={index}
-                  onSelect={() => {
-                    setUser({
-                      plan: plan.name,
-                      planNumber: `${index}`,
-                      planPrice: plan.price.toString(),
-                    });
-                    navigate('/cotiza-tu-seguro-rimac/2');
-                  }}
-                  icon={<House />}
-                  title={plan.name}
-                  price={plan.price.toString()}
-                  items={plan.description}
-                />
-              ))}
+        {forWho.length ? (
+          <div className="choose-plan-container-overflow">
+            <div className="choose-plan-container">
+              {plans
+                .filter((plan) => plan.age < age)
+                .map((plan, index) => (
+                  <PlanCard
+                    key={index}
+                    onSelect={() => {
+                      setUser({
+                        plan: plan.name,
+                        planNumber: `${index}`,
+                        planPrice: plan.price.toString(),
+                      });
+                      navigate('/cotiza-tu-seguro-rimac/2');
+                    }}
+                    icon={<House />}
+                    title={plan.name}
+                    price={plan.price.toString()}
+                    items={plan.description}
+                  />
+                ))}
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
     </div>
   );

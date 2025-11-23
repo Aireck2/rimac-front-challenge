@@ -7,7 +7,7 @@ import { useLocation } from 'wouter';
 import { Card } from '@/common/components';
 import { useUserStore } from '@/store';
 
-import '../variables.css';
+import '@/variables.css';
 import './ResumePage.css';
 
 const ResumePage = () => {
@@ -25,10 +25,6 @@ const ResumePage = () => {
       >
         <Steps
           size="small"
-          style={{
-            width: '360px',
-          }}
-          current={2}
           items={[
             {
               title: 'Planes y coberturas',
