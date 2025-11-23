@@ -1,0 +1,23 @@
+:root {
+  --grid-columns: 1fr;
+  --hero-display: none;
+  --resume-display: none;
+  --hero-display-mobile: block;
+  --footer-flex-direction: column;
+
+  --color-primary: #4f4fff;
+  --card-border-hover: 3px solid #141938;
+  --success-color: #389e0d;
+  --button-size: 3rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --button-size: 3.5rem;
+    --grid-columns: 1fr 1fr;
+    --hero-display: block;
+    --resume-display: flex;
+    --hero-display-mobile: none;
+    --footer-flex-direction: row;
+  }
+}
