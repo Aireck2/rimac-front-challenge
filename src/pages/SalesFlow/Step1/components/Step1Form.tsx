@@ -148,7 +148,16 @@ export const Step1Form = () => {
           <Checkbox>Acepto la Política Comunicaciones Comerciales</Checkbox>
         </Form.Item>
         <div style={{ margin: '1rem 0' }}>
-          <a href="/#">Aplican Términos y Condiciones.</a>
+          <a
+            href="/#"
+            style={{
+              textDecoration: 'underline',
+              fontWeight: 'bold',
+              color: 'black',
+            }}
+          >
+            Aplican Términos y Condiciones.
+          </a>
         </div>
         <Button block htmlType="submit" type="primary">
           Cotiza aquí
